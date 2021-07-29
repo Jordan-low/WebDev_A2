@@ -19,19 +19,3 @@ darkMode.addEventListener('click', function(){
     darkMode.classList.toggle('active');
     content.classList.toggle('night');
 })
-
-//Remove active class on menu if resized to browser size and temporarily disable animations during scaling
-let resizeTimer;
-
-function updateResize() {
-    if (window.innerWidth > 796)
-        menu.classList.remove("active");
-
-    document.body.classList.add("notransition");
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        document.body.classList.remove("notransition");
-    }, 400);
-}
-
-window.onresize = updateResize;

@@ -1,3 +1,6 @@
+:root{
+    --color-1: #2f3240;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -127,7 +130,7 @@ a{
 	transform: rotate(135deg);
 }
 
-
+/*TOP BANNER*/
 .container{
 	width: 100%;
 }
@@ -142,13 +145,28 @@ a{
 }
 .topContent{
 	display: flex;
+	flex-direction: column;
+
+	text-align: center;
 	align-items: center;
 	justify-content: center;
+
 	height: 75vh;
 	width: 100%;
+
 	font-size: 10vh;
 	font-style: italic;
 	color: lightcoral;
+}
+.topContent h2{
+	position: relative;
+	font-size: 0.3em;
+	width: 100%;
+}
+.topContent h2 span{
+	color:#DDD;
+	font-style: normal;
+	display: none;
 }
 
 /*ABOUT ME*/
@@ -176,6 +194,7 @@ a{
 }
 .aboutMeContent p{
 	font-style: italic;
+	color: white;
 	font-size: 2vh;
 }
 .aboutMeImage{
@@ -211,6 +230,7 @@ a{
 }
 .portfolioContent p{
 	font-style: italic;
+	color: white;
 	font-size: 2vh;
 }
 .portfolioImage{
@@ -246,6 +266,7 @@ a{
 }
 .contactMeContent p{
 	font-style: italic;
+	color: white;
 	font-size: 2vh;
 }
 .contactMeImage{
@@ -257,10 +278,12 @@ a{
 }
 
 /*WEB RESPONSIVE*/
-
 @media only screen and (min-width: 320px) and (max-width: 767px)  {
     .topContent{
-		font-size: 5vh;
+		font-size: 3vh;
+	}
+	.topContent h2{
+		font-size: 3vh;
 	}
 	.aboutMeContent h1{
 		margin-top: 50vh;
@@ -290,7 +313,10 @@ a{
 
 @media only screen and (min-width: 768px) and (max-width: 1023px)  {
     .topContent{
-		font-size: 10vh;
+		font-size: 5vh;
+	}
+	.topContent h2{
+		font-size: 4vh;
 	}
 	.aboutMeContent h1{
 		margin-top: 50vh;
@@ -320,7 +346,10 @@ a{
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px)  {
     .topContent{
-		font-size: 10vh;
+		font-size: 8vh;
+	}
+	.topContent h2{
+		font-size: 6vh;
 	}
 	.aboutMeContent h1{
 		margin-top: 50vh;

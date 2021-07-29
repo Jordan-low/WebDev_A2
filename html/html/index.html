@@ -32,9 +32,28 @@
 
       <div class="topBanner">
          <div class="topContent">
-            <b>JORDAN LOW</b>
+            <h1>JORDAN LOW</h1>
+            <h2 id="text">
+               <span style="display: initial;">GAMER</span>
+               <span>BALLER</span>
+               <span>YOUTUBER</span>
+            </h2>
          </div>
       </div>
+
+      <script type="text/javascript">
+         //Cycle through banner texts
+         var text = document.getElementById('text');
+         var word = text.getElementsByTagName('span');
+         var i = 0;
+         
+         function Cycle() {
+             word[i].style.display = 'none';
+             i = (i + 1) % word.length;   
+             word[i].style.display = 'initial';
+         }
+         setInterval(Cycle, 1000);
+      </script>
 
       <div class="aboutMeBanner">
          <div class="aboutMeContent">
