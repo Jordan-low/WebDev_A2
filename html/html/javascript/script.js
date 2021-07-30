@@ -1,3 +1,7 @@
+function formSubmitted(){
+    alert("Form Submitted!");
+}
+
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
 
@@ -31,10 +35,3 @@ window.addEventListener('scroll', ()=>{
         content.classList.remove('reveal');
     }
 });
-
-form = document.getElementById('form')
-form.addEventListener('submit', formSubmitted);
-
-function formSubmitted(){
-    alert('Form Submitted');
-}

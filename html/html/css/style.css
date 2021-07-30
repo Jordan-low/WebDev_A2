@@ -283,7 +283,7 @@ a{
 }
 .contact {
 	margin: auto;
-	width: 80vw;
+	width: 40vw;
 	background-color: #fff;
 	box-shadow: 0 0 20px 0 #999;
 	transition: ease 0.5s;
@@ -295,11 +295,6 @@ a{
 	text-align: center;
 	color: salmon;
 	padding-top: 30px;
-}
-.contact p {
-	text-align: center;
-	color: gray;
-	padding-top: 5px;
 }
 form {
 	margin: 35px;
@@ -372,10 +367,7 @@ form {
 		font-size: 1vh;
 	}
 	.contact h1{
-		font-size: 7vw;
-	}
-	.contact p{
-		font-size: 3vw;
+		font-size: 5vw;
 	}
 	.input-field {
 		height: 6vw;
@@ -389,6 +381,9 @@ form {
 	.textarea-field {
 		height: 8vw;
 		vertical-align: middle;
+	}
+	.contact{
+		width: 80vw;
 	}
 }
 
