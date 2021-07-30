@@ -175,6 +175,11 @@ a{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	transition: all 1s ease-in-out;
+}
+.reveal{
+	opacity: 1;
+	transform: scale(1);
 }
 .aboutMeContent{
 	height: 100vh;
@@ -276,6 +281,63 @@ a{
 .contactMeImage img{
 	max-width: 50vw;
 }
+.contact {
+	margin: auto;
+	width: 80vw;
+	background-color: #fff;
+	box-shadow: 0 0 20px 0 #999;
+	transition: ease 0.5s;
+}
+.input-field:hover {
+	border: 1px solid salmon;
+}
+.contact h1 {
+	text-align: center;
+	color: salmon;
+	padding-top: 30px;
+}
+.contact p {
+	text-align: center;
+	color: gray;
+	padding-top: 5px;
+}
+form {
+	margin: 35px;
+}
+.input-field::placeholder{
+	font-size: 100%;
+}
+.textarea-field::placeholder{
+	font-size: 100%;
+}
+.input-field {
+	width: 100%;
+	height: 3vw;
+	margin-top: 20px;
+	padding-left: 10px;
+	border: 1px solid #777;
+	border-radius: 14px;
+	outline: none;
+}
+.textarea-field {
+	height: 4vw;
+	padding-top: 10px;
+}
+.btn {
+	border-radius: 15px;
+	color: #fff;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	padding: 10px;
+	padding-bottom: 10px;
+	background-color: salmon;
+	font-size: 12px;
+	border: none;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: lightsalmon;
+}
 
 /*WEB RESPONSIVE*/
 @media only screen and (min-width: 320px) and (max-width: 767px)  {
@@ -309,6 +371,25 @@ a{
 		font-style: italic;
 		font-size: 1vh;
 	}
+	.contact h1{
+		font-size: 7vw;
+	}
+	.contact p{
+		font-size: 3vw;
+	}
+	.input-field {
+		height: 6vw;
+	}
+	.input-field::placeholder{
+		font-size: 75%;
+	}
+	.textarea-field::placeholder{
+		font-size: 75%;
+	}
+	.textarea-field {
+		height: 8vw;
+		vertical-align: middle;
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px)  {
@@ -341,6 +422,12 @@ a{
 	.contactMeContent p{
 		font-style: italic;
 		font-size: 2vh;
+	}
+	.input-field::placeholder{
+		font-size: 65%;
+	}
+	.textarea-field::placeholder{
+		font-size: 65%;
 	}
 }
 

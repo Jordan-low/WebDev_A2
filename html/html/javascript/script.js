@@ -19,3 +19,22 @@ darkMode.addEventListener('click', function(){
     darkMode.classList.toggle('active');
     content.classList.toggle('night');
 })
+
+window.addEventListener('scroll', ()=>{
+    let content = document.querySelector('.aboutMeContent');
+    let contentPosition = content.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight;
+    if (contentPosition < screenPosition){
+        content.classList.add('reveal');
+    }
+    else{
+        content.classList.remove('reveal');
+    }
+});
+
+form = document.getElementById('form')
+form.addEventListener('submit', formSubmitted);
+
+function formSubmitted(){
+    alert('Form Submitted');
+}
