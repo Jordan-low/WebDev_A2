@@ -17,21 +17,18 @@ function navToggle() {
    }
 }
 
+window.addEventListener('scroll', () => {
+    let content2 = document.querySelectorAll('.scrollReveal');
+    let contentPosition = content2[i].getBoundingClientRect().top;
+    let screenPosition = window.innerHeight / 0.75;
+    if (contentPosition <= screenPosition){
+        content2[i].classList.add('reveal');
+    }
+});
+
 var content = document.getElementsByTagName('body')[0];
 var darkMode = document.getElementById('dark-change');
 darkMode.addEventListener('click', function(){
     darkMode.classList.toggle('active');
     content.classList.toggle('night');
 })
-
-window.addEventListener('scroll', ()=>{
-    let content = document.querySelector('.aboutMeContent');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight;
-    if (contentPosition < screenPosition){
-        content.classList.add('reveal');
-    }
-    else{
-        content.classList.remove('reveal');
-    }
-});

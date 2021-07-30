@@ -131,6 +131,10 @@ a{
 }
 
 /*TOP BANNER*/
+.scrollReveal{
+	transform: scale(0.3);
+	transition: all 1s ease-in-out;
+}
 .container{
 	width: 100%;
 }
@@ -175,7 +179,6 @@ a{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	transition: all 1s ease-in-out;
 }
 .reveal{
 	opacity: 1;
