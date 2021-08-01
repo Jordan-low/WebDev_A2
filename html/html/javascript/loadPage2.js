@@ -4,7 +4,7 @@ function handlePage(choice) {
 
     //delete all content containers
     let mainContainer = document.querySelector(".main-container");
-    let childContainer = document.querySelectorAll(".contentContainer");
+    let childContainer = document.querySelectorAll(".contentContainer2");
     for (let i = 0; i < childContainer.length; i++) { 
         mainContainer.removeChild(childContainer[i])
     }

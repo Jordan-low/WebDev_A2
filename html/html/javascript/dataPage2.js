@@ -39,6 +39,18 @@ var dataList2 = [
         page:"portfolio",
         name:"MyPass",
         desc:"This is my Year 1 Intro-to-coding Assignment 2. MyPass is a password manager tool that allows you to store all your emails/usernames and passwords. This can be very convenient as you do not need to remember your email and password for each account that you created. This means that you can have different passwords for different accounts which is ideal as you do not want to be using the same password for every account that you own.",
-        imgName: "jordanBball.png"
+        imgName: "passw.png"
+    },
+    {
+        page:"portfolio",
+        name:"SP1",
+        desc:"This is my group's Year 1 SP1 Game. In 2020, the world went through many crises, one of which was hornets mutating to become man-eating creatures. This caused the world to meet its end. Now it’s up to our hero, Robert, to somehow restore the world back to its original peaceful state.",
+        imgName: "sp1.png"
+    },
+    {
+        page:"portfolio",
+        name:"SP2",
+        desc:"This is my group's Year 1 SP2 Game. You travel back in time to 2021 from 2051 so that you can seek revenge on the person (Bimster) who destroyed your life. While you are in 2021, you decide to explore the city so that you can find his location.",
+        imgName: "sp2.png"
     }
 ];
