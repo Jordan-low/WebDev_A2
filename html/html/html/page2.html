@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Home</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../css/style.css">
+      <script defer src="../javascript/script.js"></script>
+      <script src="../javascript/data.js"></script> <!-- dataList -->
+      <script src="../javascript/loadPage.js"></script>   
+    </head>
+   <body>
+      
+      <header class="header">
+         <div class="container">
+             <div class="row align-items-center justify-content-between">
+                 <div class="logo">
+                    <a href="#">logo</a>
+                 </div>
+                 <button type="button" class="nav-toggler">
+                    <span></span>
+                 </button>
+                 <nav class="nav">
+                    <ul>
+                       <li><a href="../index.html">Home</a></li>
+                       <li><a href="#" class="active">About Me</a></li>
+                    </ul>
+                 </nav>
+             </div>
+         </div>
+      </header>
+
+      <button onclick="handlePage('hobby')">HOBBIES</button>
+      <button onclick="handlePage('education')">EDUCATION</button>
+
+      <div class="main-container">
+
+      </div>
+      <!-- <div class="contentContainer">
+         <div class="contentText">
+           <h1>ABOUT ME</h1>
+           <p>I am currently a Year 2 Student in Nanyang Polytechnic<br>
+              studying Game Development & Technology.</p>
+        </div>
+
+        <div class="contentImage">
+           <img src="../images/jordanEars.png">
+        </div>
+     </div> -->
+      
+      <!-- social media bar -->
+      <div class="socials">
+         <img src="../images/instagram.png" onclick="window.open('https://instagram.com/jaw.dan')" alt="instagram icon"></img>
+         <img src="../images/facebook.png" onclick="window.open('https://facebook.com/lowjordan')" alt="facebook icon"></img>
+         <img src="../images/gmail.png" onclick="window.open('mailto:jawdanlow@gmail.com')" alt="gmail icon"></img>
+         <img src="../images/whatsapp.png" onclick="window.open('https://wa.me/6598504073')" alt="whatsapp icon"></img>
+      </div>
+
+   </body>
+   <footer>
+      <p style="font-size: small;">&copy; Copyright 2021, Jordan Low<br>All Rights Reserved.</p>
+   </footer>
+</html>
