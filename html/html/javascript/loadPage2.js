@@ -15,22 +15,22 @@ function handlePage(choice) {
 
 //text template
 function addTextContent(title, desc) {
-    let textContainer = document.createElement('div');
-    textContainer.className = "contentText";
+    let dropdownContainer = document.createElement('div');
+    dropdownContainer.className = "contentDropdown";
 
-    // create h1 title
-    let t = document.createElement("h1");
-    t.appendChild( document.createTextNode(title) );
-    
-    textContainer.appendChild( t );
-    
-    // create p description
-    let p = document.createElement("p");
-    p.appendChild( document.createTextNode(desc) );
-    
-    textContainer.appendChild( p );
+    let details = document.createElement('details');
+    details.className = "contentDetails";
 
-    return textContainer;
+    let summary = document.createElement('summary');
+    summary.className = "contentSummary";
+    summary.appendChild(document.createTextNode(title));
+
+    details.appendChild(summary);
+    details.appendChild(document.createTextNode(desc));
+
+    dropdownContainer.appendChild(details);
+
+    return dropdownContainer;
 }
 
 //photo template
@@ -63,26 +63,15 @@ function loadContent () {
             continue;
 
         itemCounter++;
+
         let contentContainer = document.createElement('div');
-        contentContainer.className = "contentContainer";
+        contentContainer.className = "contentContainer2";
 
-        //switch between text content on the left, image content on the right and vice versa
-        if (itemCounter % 2 == 0)
-        {
         let newTextContent = addTextContent(item.name, item.desc);
         contentContainer.appendChild(newTextContent);
 
         let newImageContent = addImageContent(item.name, item.imgName);
         contentContainer.appendChild(newImageContent);
-        }
-        else
-        {
-        let newImageContent = addImageContent(item.name, item.imgName);
-        contentContainer.appendChild(newImageContent);
-
-        let newTextContent = addTextContent(item.name, item.desc);
-        contentContainer.appendChild(newTextContent);
-        }
 
         container.appendChild(contentContainer);
     }

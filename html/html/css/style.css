@@ -182,7 +182,7 @@ a{
 }
 .reveal{
 	opacity: 1;
-	transform: scale(1);
+	transform: scale(1) !important;
 }
 .aboutMeContent{
 	height: 100vh;
@@ -340,6 +340,16 @@ form {
 
 /*PAGE 2 CONTENT*/
 .contentContainer{
+	transform: scale(0.3);
+	transition: all 1s ease-in-out;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.contentContainer2{
+	transform: scale(0.3);
+	transition: all 1s ease-in-out;
 	height: 100vh;
 	width: 100%;
 	display: flex;
@@ -361,21 +371,45 @@ form {
 	margin-top: 50vh;
 	font-size: 7vh;
 }
+.contentDropdown{
+	background: #3b3b3b;
+	border-radius: 20px;
+	padding: 2%;
+
+	width: 50%;
+	margin: auto;
+	
+	font-size: 8vh;
+	color: lightcoral;
+
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
+}
+.contentSummary{
+	font-size: 6vh;
+	color: lightcoral;
+}
+.contentDetails{
+	font-size: 2.5vh;
+	color: white;
+}
 .contentText p{
 	font-style: italic;
 	color: white;
 	font-size: 2vh;
 }
 .contentImage{
-	margin:auto;
-	padding:0;
+	margin: auto;
+	padding: 0;
 }
 .contentImage img{
 	max-width: 50vw;
 }
 
 /*WEB RESPONSIVE*/
-@media only screen and (min-width: 320px) and (max-width: 767px)  {
+@media only screen and (min-width: 0px) and (max-width: 767px)  {
     .topContent{
 		font-size: 3vh;
 	}
@@ -406,6 +440,18 @@ form {
 	.contact{
 		width: 80vw;
 	}
+	.contentContainer2{
+		flex-direction: column;
+	}
+	.contentDropdown{
+		width: 80%;
+	}
+	.contentSummary{
+		font-size: 3vh;
+	}
+	.contentDetails{
+		font-size: 2vh;
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px)  {
@@ -428,6 +474,12 @@ form {
 	}
 	.textarea-field::placeholder{
 		font-size: 65%;
+	}
+	.contentSummary{
+		font-size: 4.5vh;
+	}
+	.contentDetails{
+		font-size: 2vh;
 	}
 }
 

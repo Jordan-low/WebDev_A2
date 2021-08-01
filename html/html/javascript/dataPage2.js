@@ -2,7 +2,7 @@ var dataList2 = [
     {
         page:"hobby",
         name:"BASKETBALL",
-        desc:"I've always enjoyed sports in general and I love playing basketball up till now ever since I was introduced to it in secondary school. ",
+        desc:"I love playing basketball during my free time ever since I was introduced to it in secondary school.",
         imgName: "jordanBball.png"
     },
     {
@@ -34,5 +34,11 @@ var dataList2 = [
         name:"NANYANG POLYTECHNIC",
         desc:"Year 1 GPA: 3.39 (Sem 1: 3.0, Sem 2: 3.72)",
         imgName: "nyp.png"
+    },
+    {
+        page:"portfolio",
+        name:"MyPass",
+        desc:"This is my Year 1 Intro-to-coding Assignment 2. MyPass is a password manager tool that allows you to store all your emails/usernames and passwords. This can be very convenient as you do not need to remember your email and password for each account that you created. This means that you can have different passwords for different accounts which is ideal as you do not want to be using the same password for every account that you own.",
+        imgName: "jordanBball.png"
     }
 ];

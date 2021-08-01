@@ -41,26 +41,26 @@ function loadContent () {
     //loop through all datalist items
     for (let i = 0; i < dataList.length; i++) {
         let item = dataList[i];
-
+    
         let contentContainer = document.createElement('div');
         contentContainer.className = "contentContainer";
-
+    
         //switch between text content on the left, image content on the right and vice versa
         if (i % 2 == 0)
         {
-        let newTextContent = addTextContent(item.name, item.desc);
-        contentContainer.appendChild(newTextContent);
+            let newTextContent = addTextContent(item.name, item.desc);
+            contentContainer.appendChild(newTextContent);
 
-        let newImageContent = addImageContent(item.name, item.imgName);
-        contentContainer.appendChild(newImageContent);
+            let newImageContent = addImageContent(item.name, item.imgName);
+            contentContainer.appendChild(newImageContent);
         }
         else
         {
-        let newImageContent = addImageContent(item.name, item.imgName);
-        contentContainer.appendChild(newImageContent);
+            let newImageContent = addImageContent(item.name, item.imgName);
+            contentContainer.appendChild(newImageContent);
 
-        let newTextContent = addTextContent(item.name, item.desc);
-        contentContainer.appendChild(newTextContent);
+            let newTextContent = addTextContent(item.name, item.desc);
+            contentContainer.appendChild(newTextContent);
         }
 
         container.appendChild(contentContainer);
