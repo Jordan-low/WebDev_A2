@@ -22,7 +22,6 @@ for (let i = 0; i < buttons.length; i++)
 
 let active = localStorage.getItem("LATEST");
 let activeButton = document.querySelector('.' + active);
-console.log(activeButton);
 if (activeButton != null)
     activeButton.setAttribute('style', 'opacity: 1;');
 
