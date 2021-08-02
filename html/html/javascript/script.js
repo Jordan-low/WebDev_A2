@@ -2,6 +2,32 @@ function formSubmitted(){
     alert("Form Submitted!");
 }
 
+//add a cooldown before calling the function
+function coolDown(){
+    setTimeout(revealFirstElement, 10);
+}
+
+//reveal first element of about me page
+function revealFirstElement(){
+    let firstElement = document.querySelector('.contentContainer2');
+    firstElement.classList.add('reveal');
+}
+
+//reveal first element of about me page
+let buttons = document.querySelectorAll('.buttons');
+for (let i = 0; i < buttons.length; i++)
+{
+    buttons[i].addEventListener("click", coolDown);
+}
+
+let active = localStorage.getItem("LATEST");
+let activeButton = document.querySelector('.' + active);
+console.log(activeButton);
+if (activeButton != null)
+    activeButton.setAttribute('style', 'opacity: 1;');
+
+
+
 //nav bar hamburger
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);

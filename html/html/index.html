@@ -5,6 +5,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/style.css">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script defer src="javascript/script.js"></script>
       <script src="javascript/dataPage1.js"></script>
       <script src="javascript/loadPage1.js"></script>   
@@ -57,10 +58,20 @@
       </script>
 
       <div class="main-container">
+         <!-- <div class="contactMeBanner">
+            <div class="contactMeContent">
+               <h1>CONTACT ME</h1>
+               <p>Be it whether you want to collaborate or
+                  for business enquires,<br> feel free to contact me.</p>
+                  <div>V</div>
+            </div>
 
+         <div class="contactMeImage">
+            <img src="images/jordanBunny.png">
+         </div> -->
       </div>
 
-      <div class="contact">
+      <div class="contact" id="contactForm">
          <h1>Contact Form</h1>
          <form id="form" onsubmit="formSubmitted()">
             <input type="text" class="input-field" placeholder="Name: " required>
@@ -71,6 +82,21 @@
             <button type="submit" value="Submit" id="submitForm" class="btn">Submit</button>
          </form>
       </div>
+
+      <script>
+         $(document).ready(function(){
+            $('#contactButton').click(function(){
+				   $('#contactForm').slideToggle(3000, "swing");
+               
+			   });
+            $('.hob').click(function(){
+				   localStorage.setItem("LATEST", "hobbies");
+			   });
+            $('.port').click(function(){
+				   localStorage.setItem("LATEST", "portfolio");
+			   });
+         });
+      </script>
 
       <!-- social media bar -->
       <div class="socials">

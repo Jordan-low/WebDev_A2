@@ -1,5 +1,5 @@
 //text template
-function addTextContent(title, desc) {
+function addTextContent(title, desc, link, iD, latest) {
     let textContainer = document.createElement('div');
     textContainer.className = "contentText";
 
@@ -7,13 +7,26 @@ function addTextContent(title, desc) {
     let t = document.createElement("h1");
     t.appendChild( document.createTextNode(title) );
     
-    textContainer.appendChild( t );
+    textContainer.appendChild(t);
     
     // create p description
     let p = document.createElement("p");
     p.appendChild( document.createTextNode(desc) );
     
-    textContainer.appendChild( p );
+    textContainer.appendChild(p);
+    
+    //add button
+    let newButtonContent = document.createElement('a');
+    newButtonContent.className = "contentButton";
+    newButtonContent.classList.add(latest);
+
+    if (link != "")
+        newButtonContent.href += "html/" + link;
+
+    newButtonContent.appendChild(document.createTextNode("V"));
+    newButtonContent.id = iD;
+
+    textContainer.appendChild(newButtonContent);
 
     return textContainer;
 }
@@ -48,7 +61,7 @@ function loadContent () {
         //switch between text content on the left, image content on the right and vice versa
         if (i % 2 == 0)
         {
-            let newTextContent = addTextContent(item.name, item.desc);
+            let newTextContent = addTextContent(item.name, item.desc, item.buttonLink, item.id, item.latest);
             contentContainer.appendChild(newTextContent);
 
             let newImageContent = addImageContent(item.name, item.imgName);
@@ -59,7 +72,7 @@ function loadContent () {
             let newImageContent = addImageContent(item.name, item.imgName);
             contentContainer.appendChild(newImageContent);
 
-            let newTextContent = addTextContent(item.name, item.desc);
+            let newTextContent = addTextContent(item.name, item.desc, item.buttonLink, item.id, item.latest);
             contentContainer.appendChild(newTextContent);
         }
 

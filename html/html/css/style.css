@@ -249,6 +249,7 @@ a{
 	max-width: 50vw;
 }
 
+
 /*CONTACT ME*/
 .contactMeBanner{
 	height: 100vh;
@@ -284,12 +285,37 @@ a{
 .contactMeImage img{
 	max-width: 50vw;
 }
+
+/*BUTTON CONTAINER*/
+.buttonContainer{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+
+	padding-top: 3vw;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.hobbies, .education, .portfolio{
+	opacity: 0.5;
+	width: 20vh;
+	height: 5vh;
+	border-radius: 25px;
+	background: rgb(255, 135, 135);
+	color: white;
+	font-weight: bold;
+	font-size: medium;
+}
+
+/*CONTACT FORM*/
 .contact {
 	margin: auto;
 	width: 40vw;
 	background-color: #fff;
 	box-shadow: 0 0 20px 0 #999;
 	transition: ease 0.5s;
+	display: none;
 }
 .input-field:hover {
 	border: 1px solid salmon;
@@ -371,6 +397,13 @@ form {
 	margin-top: 50vh;
 	font-size: 7vh;
 }
+.contentButton{
+	padding-top: 1.5vw;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	cursor: pointer;
+	color: rgb(255, 113, 113);
+}
 .contentDropdown{
 	background: #3b3b3b;
 	border-radius: 20px;
@@ -422,7 +455,10 @@ form {
 	}
 	.contentText p{
 		font-style: italic;
-		font-size: 1vh;
+		font-size: 1.25vh;
+	}
+	.contentButton{
+		font-size: 2vh;
 	}
 	.input-field {
 		height: 6vw;
@@ -452,6 +488,11 @@ form {
 	.contentDetails{
 		font-size: 2vh;
 	}
+	.hobbies, .education, .portfolio{
+		width: 11vh;
+		height: 5vh;
+		font-size: 11px;
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px)  {
@@ -480,6 +521,11 @@ form {
 	}
 	.contentDetails{
 		font-size: 2vh;
+	}
+	.hobbies, .education, .portfolio{
+		width: 15vh;
+		height: 5vh;
+		font-size: small;
 	}
 }
 

@@ -1,6 +1,6 @@
 //handle page type
 function handlePage(choice) {
-    localStorage.setItem("CHOICE", choice); //save choice type into local storage
+    localStorage.setItem("LATEST", choice); //save latest choice type into local storage
 
     //delete all content containers
     let mainContainer = document.querySelector(".main-container");
@@ -57,9 +57,10 @@ function loadContent () {
     //loop through all datalist items
     for (let i = 0; i < dataList2.length; i++) {
         let item = dataList2[i];
-        let pageType = localStorage.getItem("CHOICE");
 
-        if (item.page != pageType)
+        let lastPageType = localStorage.getItem("LATEST");
+
+        if (item.page != lastPageType)
             continue;
 
         itemCounter++;
@@ -75,7 +76,21 @@ function loadContent () {
 
         container.appendChild(contentContainer);
     }
-    localStorage.setItem("CHOICE", 'hobby'); //default back to first page type
+    if (localStorage.getItem("LATEST") === null)
+        localStorage.setItem("LATEST", "none");
+
+    coolDown();
 }
-  
+
+//add a cooldown before calling the function
+function coolDown(){
+    setTimeout(revealFirstElement, 10);
+}
+
+//reveal first element of about me page
+function revealFirstElement(){
+    let firstElement = document.querySelector('.contentContainer2');
+    firstElement.classList.add('reveal');
+} 
+
 document.addEventListener('DOMContentLoaded', loadContent);

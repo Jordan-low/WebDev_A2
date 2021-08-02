@@ -1,18 +1,18 @@
 var dataList2 = [
     {
-        page:"hobby",
+        page:"hobbies",
         name:"BASKETBALL",
         desc:"I love playing basketball during my free time ever since I was introduced to it in secondary school.",
         imgName: "jordanBball.png"
     },
     {
-        page:"hobby",
+        page:"hobbies",
         name:"VIDEO GAMES",
         desc:"I love playing video games with my friends to help relieve my stress, and to get my mind off things. My current main game is Apex Legends.",
         imgName: "jordanApex.gif"
     },
     {
-        page:"hobby",
+        page:"hobbies",
         name:"CODING",
         desc:"I enjoy working on small coding projects during my free time to brush up my coding skills. Honestly, I kinda enjoy coding and I really like that sense of accomplishment when you've finally managed to solve the problem.",
         imgName: "jordanCoding.gif"
