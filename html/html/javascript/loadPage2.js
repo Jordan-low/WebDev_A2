@@ -1,6 +1,6 @@
 //handle page type
 function handlePage(choice) {
-    localStorage.setItem("LATEST", choice); //save latest choice type into local storage
+    sessionStorage.setItem("LATEST", choice); //save latest choice type into session storage
 
     //delete all content containers
     let mainContainer = document.querySelector(".main-container");
@@ -58,7 +58,7 @@ function loadContent () {
     for (let i = 0; i < dataList2.length; i++) {
         let item = dataList2[i];
 
-        let lastPageType = localStorage.getItem("LATEST");
+        let lastPageType = sessionStorage.getItem("LATEST");
 
         if (item.page != lastPageType)
             continue;
@@ -76,8 +76,8 @@ function loadContent () {
 
         container.appendChild(contentContainer);
     }
-    if (localStorage.getItem("LATEST") === null)
-        localStorage.setItem("LATEST", "none");
+    if (sessionStorage.getItem("LATEST") === null)
+        sessionStorage.setItem("LATEST", "none");
 
     coolDown();
 }
@@ -90,7 +90,8 @@ function coolDown(){
 //reveal first element of about me page
 function revealFirstElement(){
     let firstElement = document.querySelector('.contentContainer2');
-    firstElement.classList.add('reveal');
+    if (firstElement)
+        firstElement.classList.add('reveal');
 } 
 
 document.addEventListener('DOMContentLoaded', loadContent);

@@ -37,25 +37,6 @@
          <button class="portfolio buttons" onclick="handlePage('portfolio')">PORTFOLIO</button>
       </div>
 
-      <script>
-
-         $(document).ready(function(){
-            $('.buttons').click(function(){
-               $(this).animate({
-                  opacity: '1',
-               });
-               let buttons = document.getElementsByClassName("buttons");
-               for (let i = 0; i < buttons.length; i++) {
-                  if (buttons[i] == this)
-                     continue;
-                     $(buttons[i]).animate({
-                        opacity: '0.5',
-                     });
-               }
-			   });
-         });
-      </script>
-
       <div class="main-container">
          <!-- for reference below
           <div class="scrollReveal">
