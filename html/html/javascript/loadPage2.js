@@ -41,7 +41,7 @@ function addImageContent(title, file) {
     // create img
     let img = document.createElement('img');
     img.alt = title;
-    img.src = "../images/"+file;
+    img.src = "images/"+file;
     
     imageContainer.appendChild(img);
     
