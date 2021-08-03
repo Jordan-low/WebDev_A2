@@ -1,4 +1,4 @@
-//text template
+//text and button template
 function addTextContent(title, desc, link, iD, latest) {
     let textContainer = document.createElement('div');
     textContainer.className = "contentText";
@@ -20,9 +20,11 @@ function addTextContent(title, desc, link, iD, latest) {
     newButtonContent.className = "contentButton";
     newButtonContent.classList.add(latest);
 
+    //add a href link to the button
     if (link != "")
         newButtonContent.href += "html/" + link;
 
+    //create the default button text
     newButtonContent.appendChild(document.createTextNode("V"));
     newButtonContent.id = iD;
 

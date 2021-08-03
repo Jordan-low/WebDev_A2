@@ -1,19 +1,16 @@
- //PAGE 1 ANIMATIONS
+ //PAGE 1 ANIMATIONS AND BUTTON EVENTS
 $(document).ready(function(){
     var item = $('#contactButton');
     if (item)
     {
         $('#contactButton').click(function(){
             $('#contactForm').slideToggle(3000, "swing");
-            console.log("DO");
-
         });
         $('.hob').click(function(){
-            console.log("HO");
-                sessionStorage.setItem("LATEST", "hobbies");
+                sessionStorage.setItem("LATEST", "hobbies"); //update session storage info
             });
         $('.port').click(function(){
-                sessionStorage.setItem("LATEST", "portfolio");
+                sessionStorage.setItem("LATEST", "portfolio"); //update session storage info
             });
     }
  });
@@ -27,7 +24,7 @@ $(document).ready(function(){
             //animate the pressed (active) button
             $(this).animate({
                opacity: '1',
-               width: '25vw'
+               width: '35vw'
             });
 
             //reset the rest of the buttons to default
@@ -37,15 +34,14 @@ $(document).ready(function(){
                   continue;
                   $(buttons[i]).animate({
                      opacity: '0.5',
-                     width: '20vw'
+                     width: '25vw'
                   });
             }
         });
     }
  });
 
-
-
+//contact form submitted event
 function formSubmitted(){
     let contactForm = document.getElementById("form");
     var formData = new FormData(contactForm);
@@ -78,38 +74,61 @@ if (active === null)
     active = "hobbies";
 let activeButton = document.querySelector('.' + active);
 if (activeButton != null)
-    activeButton.setAttribute('style', 'opacity: 1;');
+    activeButton.setAttribute('style', 'opacity: 1; width: 35vw;'); //set active section button
 
 
-//Cycle through banner texts
+//cycle through and type writer for banner text (page 1)
 var text = document.getElementById('text');
 var count = 0;
+var i = 0;
 if (text)
     var word = text.getElementsByTagName('span');
 
 if (word)
 {
+    let string = "";
+    setInterval(Cycle, 2000); //cycle through the text every 2 sec
     function Cycle() {
         word[count].style.display = 'none';
-        count = (count + 1) % word.length;   
+        count = (count + 1) % word.length;
         word[count].style.display = 'initial';
+        console.log("cycled");
+        StartType();
     }
-    setInterval(Cycle, 1000);
+    
+    function Write(){
+        if (i < string.length) //check if the line has been fully typed out
+        {
+            word[count].innerHTML += string.charAt(i); //write the characters into the html
+            console.log("added " + string.charAt(i));
+            i++;
+            setTimeout(Write, 100);
+        }
+    }
+    
+    function StartType(){
+        i = 0;
+        string = word[count].innerHTML; //store initial text in a string
+        console.log(string);
+        word[count].innerHTML = ""; //delete html text
+        Write();
+    }
 }
+
 
 //nav bar hamburger
 const navToggler = document.querySelector(".nav-toggler");
-navToggler.addEventListener("click", navToggle);
+navToggler.addEventListener("click", navToggle); //check for nav bar onclick event
 
 function navToggle() {
-   navToggler.classList.toggle("active");
+   navToggler.classList.toggle("active"); //toggle active/inactive
    const nav = document.querySelector(".nav");
-   nav.classList.toggle("open");
+   nav.classList.toggle("open"); //toggle open/close
    if(nav.classList.contains("open")){
-       nav.style.maxHeight = nav.scrollHeight + "px";
+       nav.style.maxHeight = nav.scrollHeight + "px"; //if its active, increase the height
    }
    else{
-       nav.removeAttribute("style");
+       nav.removeAttribute("style"); //else, remove and reset the style
    }
 }
 
@@ -136,11 +155,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+//update page visited counter on loading the website (local storage)
 function pageVisitedCounter(){
+    //check if type writer exists on the current page
+    var text = document.getElementById('text');
+    if (text)
+        var word = text.getElementsByTagName('span');
+    if (word)
+        StartType();
+
+    //check if user has visited this website before, if no, set the default value to 0
     if (localStorage.getItem("VISITED") === null)
         localStorage.setItem("VISITED", 0);
 
+    //increase and update the page visited count
     let pageVisitCount = +localStorage.getItem("VISITED") + 1;
     localStorage.setItem("VISITED", pageVisitCount);
 
