@@ -92,7 +92,6 @@ if (word)
         word[count].style.display = 'none';
         count = (count + 1) % word.length;
         word[count].style.display = 'initial';
-        console.log("cycled");
         StartType();
     }
     
@@ -100,7 +99,6 @@ if (word)
         if (i < string.length) //check if the line has been fully typed out
         {
             word[count].innerHTML += string.charAt(i); //write the characters into the html
-            console.log("added " + string.charAt(i));
             i++;
             setTimeout(Write, 100);
         }
@@ -109,7 +107,6 @@ if (word)
     function StartType(){
         i = 0;
         string = word[count].innerHTML; //store initial text in a string
-        console.log(string);
         word[count].innerHTML = ""; //delete html text
         Write();
     }
