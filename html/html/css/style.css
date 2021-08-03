@@ -299,8 +299,8 @@ a{
 }
 .hobbies, .education, .portfolio{
 	opacity: 0.5;
-	width: 20vh;
-	height: 5vh;
+	width: 20vw;
+	height: 7vh;
 	border-radius: 25px;
 	background: rgb(255, 135, 135);
 	color: white;
@@ -443,7 +443,10 @@ form {
 
 /*WEB RESPONSIVE*/
 @media only screen and (min-width: 0px) and (max-width: 767px)  {
-    .topContent{
+    .socials img{
+		max-width: 15vw;
+	}
+	.topContent{
 		font-size: 3vh;
 	}
 	.topContent h2{
@@ -613,17 +616,19 @@ label.active:before{
 /*floating social media bar*/
 
 .socials {
-	position: fixed;
-	top: 50%;
-	right: 0px;
-	transform: translateX(-50%);
+	display: flex;
+	flex-direction: row;
+	
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 2vh;
 }
 
 .socials img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 5vw;
+	max-width: 5vh;
 	padding: 0px;
 	margin: 2px;
 	line-height: 0px;
@@ -640,4 +645,5 @@ footer {
 	text-align: center;
 	padding: 20px;
 	color: #919191;
+	font-size: small;
 }

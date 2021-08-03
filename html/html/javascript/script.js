@@ -1,3 +1,4 @@
+ //PAGE 1 ANIMATIONS
 $(document).ready(function(){
     var item = $('#contactButton');
     if (item)
@@ -17,20 +18,26 @@ $(document).ready(function(){
     }
  });
 
+ //PAGE 2 ANIMATIONS
  $(document).ready(function(){
     var button = $('.buttons');
     if (button) 
     {
         $('.buttons').click(function(){
+            //animate the pressed (active) button
             $(this).animate({
                opacity: '1',
+               width: '25vw'
             });
+
+            //reset the rest of the buttons to default
             let buttons = document.getElementsByClassName("buttons");
             for (let i = 0; i < buttons.length; i++) {
-               if (buttons[i] == this)
+               if (buttons[i] == this) //check if its the currently active button, then ignore
                   continue;
                   $(buttons[i]).animate({
                      opacity: '0.5',
+                     width: '20vw'
                   });
             }
         });
@@ -38,8 +45,11 @@ $(document).ready(function(){
  });
 
 
+
 function formSubmitted(){
-    alert("Form Submitted!");
+    let contactForm = document.getElementById("form");
+    var formData = new FormData(contactForm);
+    alert("Hello " + formData.get('name-field') + "! Your form has been submitted!");
 }
 
 //add a cooldown before calling the function
@@ -61,7 +71,11 @@ for (let i = 0; i < buttons.length; i++)
     buttons[i].addEventListener("click", coolDown);
 }
 
+
+//set active section for about me page
 let active = sessionStorage.getItem("LATEST");
+if (active === null)
+    active = "hobbies";
 let activeButton = document.querySelector('.' + active);
 if (activeButton != null)
     activeButton.setAttribute('style', 'opacity: 1;');
@@ -69,16 +83,16 @@ if (activeButton != null)
 
 //Cycle through banner texts
 var text = document.getElementById('text');
-if (word)
+var count = 0;
+if (text)
     var word = text.getElementsByTagName('span');
-var i = 0;
 
 if (word)
 {
     function Cycle() {
-        word[i].style.display = 'none';
-        i = (i + 1) % word.length;   
-        word[i].style.display = 'initial';
+        word[count].style.display = 'none';
+        count = (count + 1) % word.length;   
+        word[count].style.display = 'initial';
     }
     setInterval(Cycle, 1000);
 }
@@ -121,3 +135,17 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+
+function pageVisitedCounter(){
+    if (localStorage.getItem("VISITED") === null)
+        localStorage.setItem("VISITED", 0);
+
+    let pageVisitCount = +localStorage.getItem("VISITED") + 1;
+    localStorage.setItem("VISITED", pageVisitCount);
+
+    let updatePageText = document.getElementById("pageVisited");
+    updatePageText.append("You've visited this website " + pageVisitCount + " times");
+}
+
+document.addEventListener('DOMContentLoaded', pageVisitedCounter);

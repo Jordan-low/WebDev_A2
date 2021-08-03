@@ -60,7 +60,7 @@
       <div class="contact" id="contactForm">
          <h1>Contact Form</h1>
          <form id="form" onsubmit="formSubmitted()">
-            <input type="text" class="input-field" placeholder="Name: " required>
+            <input type="text" name="name-field" class="input-field" placeholder="Name: " required>
             <input type="email" class="input-field" placeholder="Email: " required>
             <input type="number" class="input-field" placeholder="Phone Number (optional): ">
             <input type="text" class="input-field" placeholder="Subject: " required>
@@ -84,16 +84,19 @@
          });
       </script> -->
 
-      <!-- social media bar -->
+     
+
+   </body>
+   <footer>
+       <!-- social media bar -->
       <div class="socials">
          <img src="images/instagram.png" onclick="window.open('https://instagram.com/jaw.dan')" alt="instagram icon"></img>
          <img src="images/facebook.png" onclick="window.open('https://facebook.com/lowjordan')" alt="facebook icon"></img>
          <img src="images/gmail.png" onclick="window.open('mailto:jawdanlow@gmail.com')" alt="gmail icon"></img>
          <img src="images/whatsapp.png" onclick="window.open('https://wa.me/6598504073')" alt="whatsapp icon"></img>
       </div>
-
-   </body>
-   <footer>
-      <p style="font-size: small;">&copy; Copyright 2021, Jordan Low<br>All Rights Reserved.</p>
+      
+      <p id="pageVisited"></p> <br>
+      <p>&copy; Copyright 2021, Jordan Low<br>All Rights Reserved.</p>
    </footer>
 </html>

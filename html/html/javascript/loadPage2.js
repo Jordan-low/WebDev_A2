@@ -50,7 +50,9 @@ function addImageContent(title, file) {
 
 function loadContent () {
     //load page's content
-    
+    if (sessionStorage.getItem("LATEST") === null)
+        sessionStorage.setItem("LATEST", "hobbies");
+
     let container = document.querySelector(".main-container");
     let itemCounter = 1;
 
@@ -76,8 +78,6 @@ function loadContent () {
 
         container.appendChild(contentContainer);
     }
-    if (sessionStorage.getItem("LATEST") === null)
-        sessionStorage.setItem("LATEST", "none");
 
     coolDown();
 }
